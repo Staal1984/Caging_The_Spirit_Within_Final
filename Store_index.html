@@ -15,22 +15,22 @@
       font-size: 28px;
       margin-bottom: 10px;
     }
+    .wallet {
+      font-size: 20px;
+      color: #00ffcc;
+      margin-bottom: 20px;
+    }
     .store-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      margin-top: 30px;
+      margin-top: 10px;
     }
     .store-item {
       background-color: #1a1a1a;
       border: 2px solid #444;
       border-radius: 10px;
       padding: 15px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .store-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #00ffcc;
     }
     .store-item h2 {
       margin-bottom: 8px;
@@ -38,55 +38,66 @@
     .price {
       color: #00ffcc;
       font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .buy-button {
+      background-color: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .buy-button:hover {
+      background-color: #00dddd;
     }
   </style>
 </head>
 <body>
   <h1>🛍️ Hover League Store</h1>
-  <p>Buy new gear, hoverboards, and FX upgrades for your loadout!</p>
+  <div class="wallet">💰 Coins: <span id="coins">500</span></div>
 
   <div class="store-grid">
     <div class="store-item">
       <h2>🛹 Dragon Slayer</h2>
       <p>Elite hoverboard with 3-fan lift + rear thrusters.</p>
-      <p class="price">$249.00</p>
+      <p class="price">249 coins</p>
+      <button class="buy-button" onclick="buyItem(249)">Buy</button>
     </div>
     <div class="store-item">
       <h2>👢 ArcBoots</h2>
       <p>Magnetic boots for secure board control + safety release.</p>
-      <p class="price">$59.00</p>
+      <p class="price">59 coins</p>
+      <button class="buy-button" onclick="buyItem(59)">Buy</button>
     </div>
     <div class="store-item">
       <h2>🌫️ Ghost Trail FX</h2>
       <p>Snap-on LED mist system with glowing trail modes.</p>
-      <p class="price">$29.00</p>
+      <p class="price">29 coins</p>
+      <button class="buy-button" onclick="buyItem(29)">Buy</button>
     </div>
     <div class="store-item">
       <h2>🎧 Trick FX Headset</h2>
       <p>Syncs lights and sound to your stunts.</p>
-      <p class="price">$39.00</p>
+      <p class="price">39 coins</p>
+      <button class="buy-button" onclick="buyItem(39)">Buy</button>
     </div>
   </div>
-<div style="
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #111;
-  border-top: 2px solid #333;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  font-size: 16px;
-  z-index: 999;">
-  
-  <a href="TeamBuilder_index.html" style="color: #00ffcc; text-decoration: none;">🧠 Home</a>
-  <a href="game.html" style="color: #00ffcc; text-decoration: none;">🎮 Game</a>
-  <a href="Loadout_index.html" style="color: #00ffcc; text-decoration: none;">🧰 Loadout</a>
-  <a href="GearLocker_index.html" style="color: #00ffcc; text-decoration: none;">🧳 Gear</a>
-  <a href="MyProfile_index.html" style="color: #00ffcc; text-decoration: none;">👤 Profile</a>
-  <a href="Store_index.html" style="color: #00ffcc; text-decoration: none;">🛍️ Store</a>
-</div></body>
+
+  <script>
+    let coins = 500;
+    function buyItem(cost) {
+      if (coins >= cost) {
+        coins -= cost;
+        document.getElementById('coins').innerText = coins;
+        alert("✅ Purchase successful!");
+      } else {
+        alert("❌ Not enough coins!");
+      }
+    }
+  </script>
+</body>
 </html>
 
   
