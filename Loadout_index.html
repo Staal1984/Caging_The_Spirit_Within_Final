@@ -39,13 +39,8 @@
   <h1>🎮 Loadout</h1>
   <p>Select your Hover League gear, hoverboard, and custom add-ons before entering the arena!</p>
 
-  <ul>
-    <li>🛹 Choose Hoverboard Model</li>
-    <li>🛠️ Add Trick Mods & Boosters</li>
-    <li>🎵 Select Sound FX or Music</li>
-    <li>💡 Toggle LED Ring Color</li>
-    <li>🧲 Enable ArcBoot Sync</li>
-  </ul>
+  <h2>🧰 Your Unlocked Gear</h2>
+<ul id="gear-list"></ul>
 
   <p><a href="TeamBuilder_index.html">⬅️ Back to Team Builder</a></p>
 <div style="
@@ -67,5 +62,21 @@
   <a href="GearLocker_index.html" style="color: #00ffcc; text-decoration: none;">🧳 Gear</a>
   <a href="MyProfile_index.html" style="color: #00ffcc; text-decoration: none;">👤 Profile</a>
   <a href="Store_index.html" style="color: #00ffcc; text-decoration: none;">🛍️ Store</a>
-</div></body>
+</div><script>
+  const gearList = document.getElementById("gear-list");
+
+  const items = [
+    { key: "arcboots", name: "👢 ArcBoots" },
+    { key: "ghostfx", name: "🌫️ Ghost Trail FX" },
+    { key: "trickfx", name: "🎧 Trick FX Headset" },
+    { key: "dragonslayer", name: "🛹 Dragon Slayer" }
+  ];
+
+  items.forEach(item => {
+    const owned = localStorage.getItem(item.key) === "owned";
+    const li = document.createElement("li");
+    li.innerText = owned ? `${item.name} ✅` : `${item.name} 🔒 Locked`;
+    gearList.appendChild(li);
+  });
+</script></body>
 </html>
