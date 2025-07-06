@@ -1,18 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>Team Builder</title>
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .menu a {
+      background: #1a1a1a;
+      border: 2px solid #444;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 18px;
+      color: #00ffcc;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: block;
+    }
+    .menu a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00ffcc;
+    }
+  </style>
 </head>
-<body style="background-color: black; color: lime; font-family: Arial, sans-serif;">
-  <h1>🛠️ Team Builder</h1><li><a href="../PlayerCards/index.html" style="color: crimson;">🎴 Player Cards</a></li>
-  <li><a href="../Loadout/index.html" style="color: lightskyblue;">🎮 Loadout</<li><a href="../GearLocker/index.html" style="color: orange;">🧢 Gear Locker</a></li><p>Create your Hover League team, pick your role, and gear up for the arena!</p>
-  <ul>
-    <li>🧍 Choose Player Name</li>
-    <li>🎨 Select Team & Colors</li>
-    <li>⚙️ Pick Hoverboard & Gear</li>
-    <li>📸 Upload Avatar (optional)</li>
-    <li>🔁 Save Card & Join Roster</li>
-  </ul>
-  <p><a href="../index.html" style="color: cyan;">⬅️ Back to Launcher</a></p>
+<body>
+  <h1>🧠 Team Builder Hub</h1>
+  <p>Choose a section to build, gear up, or customize your Hover League experience.</p>
+
+  <div class="menu">
+    <a href="game.html">🎮 Game + HoverCore</a>
+    <a href="GearLocker_index.html">🧳 Gear Locker</a>
+    <a href="HowToPlay_index.html">📘 How to Play</a>
+    <a href="Loadout_index.html">🧰 Loadout</a>
+    <a href="MyProfile_index.html">👤 My Profile</a>
+    <a href="PlayerCards_index.html">🪪 Player Cards</a>
+    <a href="Store_index.html">🛍️ Store</a>
+  </div>
 </body>
 </html>
