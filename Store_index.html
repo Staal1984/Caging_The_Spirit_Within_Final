@@ -96,7 +96,22 @@
         alert("❌ Not enough coins!");
       }
     }
-  </script>
+  <script>
+  // Load saved coins from localStorage, or default to 500
+  let coins = parseInt(localStorage.getItem("hoverCoins")) || 500;
+  document.getElementById("coins").innerText = coins;
+
+  function buyItem(cost) {
+    if (coins >= cost) {
+      coins -= cost;
+      document.getElementById("coins").innerText = coins;
+      localStorage.setItem("hoverCoins", coins);
+      alert("✅ Purchase successful!");
+    } else {
+      alert("❌ Not enough coins!");
+    }
+  }
+</script>
 </body>
 </html>
 
